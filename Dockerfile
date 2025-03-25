@@ -7,7 +7,7 @@ WORKDIR /workspace
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
-COPY . .
+COPY ./ /workspace
 
 EXPOSE 8080
 
