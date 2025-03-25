@@ -16,12 +16,19 @@ export interface PaymentResponse {
   message: string;
 }
 
-export const processPayment = async (paymentData: PaymentRequest): Promise<PaymentResponse> => {
+export const processPayment = async (
+  paymentData: PaymentRequest,
+): Promise<PaymentResponse> => {
   try {
-    const response: PaymentResponse = await sharedPost(PAYMENT_API_URL, paymentData) as PaymentResponse;
+    const response: PaymentResponse = (await sharedPost(
+      PAYMENT_API_URL,
+      paymentData,
+    )) as PaymentResponse;
     return response;
   } catch (error) {
     console.error('Payment processing failed:', error);
-    throw new Error(`Failed to process the payment due to ${error}. Please try again.`);
+    throw new Error(
+      `Failed to process the payment due to ${error}. Please try again.`,
+    );
   }
 };

@@ -18,13 +18,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </HelmetProvider>
       <Header />
       <main className={styles.main}>
-      <div className={styles.mainWrapper}>
-        {children}
-      </div>
-    </main>
-    <footer className='footer'>
-      <p><a href="">©2025 | Web Fragments Enterprise Demo</a></p>
-    </footer>
+        <div className={styles.mainWrapper}>{children}</div>
+      </main>
+      <footer className="footer">
+        <p>
+          <a href="">©2025 | Web Fragments Enterprise Demo</a>
+        </p>
+      </footer>
     </div>
   );
 };

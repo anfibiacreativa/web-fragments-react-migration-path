@@ -4,7 +4,6 @@ import { test, expect } from '@playwright/test';
 // need to investigate
 
 test.describe('Iframes are created test', () => {
-
   test('Check for hidden iframes', async ({ page }) => {
     await page.goto('/store/catalog');
 
@@ -17,9 +16,9 @@ test.describe('Iframes are created test', () => {
       console.log(frame, '### frame');
       const headTitle = frame.locator('head > title');
       await expect(headTitle).toHaveText('');
-      await expect.poll(() =>
-        frame.locator('body > script').count()
-      ).toBeGreaterThan(0);
+      await expect
+        .poll(() => frame.locator('body > script').count())
+        .toBeGreaterThan(0);
     }
   });
 });

@@ -1,6 +1,9 @@
 import { test } from '@playwright/test';
 
-test('Generate HAR for payment service and fragment request', async ({ page, browser }) => {
+test('Generate HAR for payment service and fragment request', async ({
+  page,
+  browser,
+}) => {
   const context = await browser.newContext();
 
   // payment service harness
@@ -12,7 +15,11 @@ test('Generate HAR for payment service and fragment request', async ({ page, bro
   await paymentPage.evaluate(async () => {
     await fetch('http://localhost:3000/create-payment', {
       method: 'POST',
-      body: JSON.stringify({ amount: 49.99, currency: 'EUR', userId: 'fake_user_id' }),
+      body: JSON.stringify({
+        amount: 49.99,
+        currency: 'EUR',
+        userId: 'fake_user_id',
+      }),
     });
   });
 
@@ -23,9 +30,10 @@ test('Generate HAR for payment service and fragment request', async ({ page, bro
   await fragmentPage.goto('http://localhost:4000/store/catalogue');
 
   // Simulate fragment asset request
-  const response = await fragmentPage.request.get('http://localhost:4000/_fragment/qwik/assets/build/some-file.js');
+  const response = await fragmentPage.request.get(
+    'http://localhost:4000/_fragment/qwik/assets/build/some-file.js',
+  );
   console.log(`Fragment request status: ${response.status()}`);
-
 
   // Close context
   await context.close();

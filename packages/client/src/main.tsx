@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom/client';
 //createRoot(document.getElementById('root')!).render(<Root />);
 import { DelayedBootstrap } from './components/DelayedBootstrap';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <DelayedBootstrap />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

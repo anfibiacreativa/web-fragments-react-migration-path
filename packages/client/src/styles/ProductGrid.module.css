@@ -1,7 +1,7 @@
 .card {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   transition: transform 0.2s;
   cursor: pointer;
@@ -45,7 +45,6 @@
   }
 }
 
-
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -57,7 +56,6 @@
     grid-template-columns: 1fr 300px;
     gap: 2rem;
     padding: 2rem 0;
-    grid-template-areas:
-    'left right';
+    grid-template-areas: 'left right';
   }
 }

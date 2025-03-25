@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Checkout Tests', () => {
   const PAYMENT_ENDPOINT = 'http://localhost:3000/create-payment';
-  const HAR_PATH = './packages/polylithic-app/shell-prod-server/tests/e2e/'
+  const HAR_PATH = './packages/polylithic-app/shell-prod-server/tests/e2e/';
 
   test('Add to cart and proceed to checkout', async ({ page }) => {
     await page.goto('/store/catalog');
@@ -30,8 +30,8 @@ test.describe('Checkout Tests', () => {
     await page.waitForTimeout(20000);
     await expect(progressBar).not.toBeVisible();
     // Verify cart items are cleared
-    await expect.poll(() =>
-      page.locator('li.cart-item').count()
-    ).toBeLessThanOrEqual(0);
+    await expect
+      .poll(() => page.locator('li.cart-item').count())
+      .toBeLessThanOrEqual(0);
   });
 });

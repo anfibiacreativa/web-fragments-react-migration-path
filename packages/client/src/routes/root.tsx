@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import Layout from "../components/Layout";
-import Banner from "../components/CountDownBanner";
-import { useCartToggle } from "../utils/cartState";
-import "../index.css";
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
+import Banner from '../components/CountDownBanner';
+import { useCartToggle } from '../utils/cartState';
+import '../index.css';
 
 function App() {
   // const goTo = (url: string) => {
@@ -12,7 +12,7 @@ function App() {
   return (
     <Layout>
       <div className="container">
-        <div className={isCartOpen ? "backdrop visible" : "backdrop"}></div>
+        <div className={isCartOpen ? 'backdrop visible' : 'backdrop'}></div>
         <h1>Ecommerce Micro-Frontend Application</h1>
         <Banner />
         <button className="btn-toggle-cart" onClick={toggleCart}>

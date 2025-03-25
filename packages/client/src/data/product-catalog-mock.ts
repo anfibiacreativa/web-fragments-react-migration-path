@@ -7,7 +7,7 @@ type Product = {
   size: string;
   imageUrl: string;
   rating: number;
-}
+};
 
 export const products: Product[] = [
   {
@@ -18,7 +18,7 @@ export const products: Product[] = [
     color: 'Red',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const products: Product[] = [
     color: 'Blue',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const products: Product[] = [
     color: 'Black',
     size: 'XL',
     imageUrl: 'product',
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const products: Product[] = [
     color: 'Green',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ export const products: Product[] = [
     color: 'Grey',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.3
+    rating: 4.3,
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ export const products: Product[] = [
     color: 'Pink',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.0
+    rating: 4.0,
   },
   {
     id: 7,
@@ -78,7 +78,7 @@ export const products: Product[] = [
     color: 'White',
     size: '300ml',
     imageUrl: 'product',
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const products: Product[] = [
     color: 'Orange',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const products: Product[] = [
     color: 'Grey',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 10,
@@ -108,7 +108,7 @@ export const products: Product[] = [
     color: 'Black',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.4
+    rating: 4.4,
   },
   {
     id: 11,
@@ -118,7 +118,7 @@ export const products: Product[] = [
     color: 'Brown',
     size: '300ml',
     imageUrl: 'product',
-    rating: 4.2
+    rating: 4.2,
   },
   {
     id: 12,
@@ -128,7 +128,7 @@ export const products: Product[] = [
     color: 'Silver',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 13,
@@ -138,7 +138,7 @@ export const products: Product[] = [
     color: 'Blue',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 14,
@@ -148,7 +148,7 @@ export const products: Product[] = [
     color: 'Black',
     size: 'S',
     imageUrl: 'product',
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 15,
@@ -158,7 +158,7 @@ export const products: Product[] = [
     color: 'Black',
     size: '300ml',
     imageUrl: 'product',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 16,
@@ -168,7 +168,7 @@ export const products: Product[] = [
     color: 'White',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 17,
@@ -178,7 +178,7 @@ export const products: Product[] = [
     color: 'Black',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 18,
@@ -188,7 +188,7 @@ export const products: Product[] = [
     color: 'Orange',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 19,
@@ -198,7 +198,7 @@ export const products: Product[] = [
     color: 'Green',
     size: '300ml',
     imageUrl: 'product',
-    rating: 4.4
+    rating: 4.4,
   },
   {
     id: 20,
@@ -208,7 +208,7 @@ export const products: Product[] = [
     color: 'Grey',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 21,
@@ -218,7 +218,7 @@ export const products: Product[] = [
     color: 'Red',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 22,
@@ -228,7 +228,7 @@ export const products: Product[] = [
     color: 'Purple',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.2
+    rating: 4.2,
   },
   {
     id: 23,
@@ -238,7 +238,7 @@ export const products: Product[] = [
     color: 'Red',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 24,
@@ -248,7 +248,7 @@ export const products: Product[] = [
     color: 'Blue',
     size: 'One size',
     imageUrl: 'product',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 25,
@@ -258,7 +258,7 @@ export const products: Product[] = [
     color: 'Purple',
     size: 'XL',
     imageUrl: 'product',
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 26,
@@ -268,7 +268,7 @@ export const products: Product[] = [
     color: 'White',
     size: '300ml',
     imageUrl: 'product',
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 27,
@@ -278,7 +278,7 @@ export const products: Product[] = [
     color: 'Black',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.3
+    rating: 4.3,
   },
   {
     id: 28,
@@ -288,7 +288,7 @@ export const products: Product[] = [
     color: 'Dark Green',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 29,
@@ -298,7 +298,7 @@ export const products: Product[] = [
     color: 'Orange',
     size: 'M',
     imageUrl: 'product',
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 30,
@@ -308,6 +308,6 @@ export const products: Product[] = [
     color: 'Black',
     size: 'L',
     imageUrl: 'product',
-    rating: 4.8
-  }
-]
+    rating: 4.8,
+  },
+];

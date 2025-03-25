@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Shell Application Tests', () => {
-
   test('Homepage should display correct elements', async ({ page }) => {
     await page.goto('/');
 
@@ -16,24 +15,28 @@ test.describe('Shell Application Tests', () => {
 
     const banner = page.locator('div.banner');
     await expect(banner).toBeVisible();
-    const bgImage = await banner.evaluate(el => getComputedStyle(el, '::before').backgroundImage);
+    const bgImage = await banner.evaluate(
+      (el) => getComputedStyle(el, '::before').backgroundImage,
+    );
     expect(bgImage).toMatch(/url\(.*\)/);
   });
 
-  test('Store page should display correct elements and handle requests', async ({ page }) => {
+  test('Store page should display correct elements and handle requests', async ({
+    page,
+  }) => {
     await page.goto('/store/catalog');
 
     // check for <fragment-outlet> elements to be in place
     const fragmentOutlets = page.locator('fragment-outlet');
-    await expect.poll(() =>
-      fragmentOutlets.count()
-    ).toBeGreaterThanOrEqual(2);
+    await expect.poll(() => fragmentOutlets.count()).toBeGreaterThanOrEqual(2);
 
     // intercept and validate _fragment requests
-    await page.route(/_fragment.*/, route => {
+    await page.route(/_fragment.*/, (route) => {
       route.continue();
     });
-    const fragmentOutletIds = await fragmentOutlets.evaluateAll(outlets => outlets.map(outlet => outlet.getAttribute('fragment-id')));
+    const fragmentOutletIds = await fragmentOutlets.evaluateAll((outlets) =>
+      outlets.map((outlet) => outlet.getAttribute('fragment-id')),
+    );
     for (const id of fragmentOutletIds) {
       const response = await page.request.get(`/_fragment/${id}/assets/**`);
       expect(response.status()).toBe(200);
@@ -53,7 +56,6 @@ test.describe('Shell Application Tests', () => {
 
     await expect(quantityInput).toHaveValue('2');
 
-
     await increaseButton.click();
     await expect(quantityInput).toHaveValue('3');
 
@@ -63,5 +65,4 @@ test.describe('Shell Application Tests', () => {
     await decreaseButton.click();
     await expect(quantityInput).toHaveValue('1');
   });
-
 });

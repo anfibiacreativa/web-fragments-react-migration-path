@@ -5,8 +5,10 @@ import { FragmentGateway } from 'web-fragments/gateway';
 import { getNodeMiddleware } from 'web-fragments/gateway/node';
 
 const PORT = process.env.PORT || 8080;
-const storeFragmentEndpoint = process.env.STORE_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4175';
-const cartFragmentEndpoint = process.env.CART_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4173';
+const storeFragmentEndpoint =
+  process.env.STORE_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4175';
+const cartFragmentEndpoint =
+  process.env.CART_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4173';
 
 // start the gateway
 const gateway = new FragmentGateway({
@@ -42,7 +44,7 @@ const gateway = new FragmentGateway({
 gateway.registerFragment({
   fragmentId: 'store',
   prePiercingClassNames: ['store'],
-  routePatterns: ['/store/:_*','/_fragment/nuxt/:_*'],
+  routePatterns: ['/store/:_*', '/_fragment/nuxt/:_*'],
   endpoint: storeFragmentEndpoint,
   onSsrFetchError: () => ({
     response: new Response(
@@ -50,7 +52,7 @@ gateway.registerFragment({
          <style>#store-fragment-not-found { color: red; font-size: 2rem; }</style>
          Store fragment could not be loaded
        </p>`,
-      { headers: [['content-type', 'text/html']] }
+      { headers: [['content-type', 'text/html']] },
     ),
   }),
 });
@@ -67,7 +69,7 @@ gateway.registerFragment({
          <style>#cart-fragment-not-found { color: red; font-size: 2rem; }</style>
          Cart fragment could not be loaded
        </p>`,
-      { headers: [['content-type', 'text/html']] }
+      { headers: [['content-type', 'text/html']] },
     ),
   }),
 });
@@ -79,7 +81,10 @@ export function app(): express.Express {
 
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const reactAppDistFolder = path.resolve(__dirname, './react-shell-app');
-  const staticReactIndexHtmlPath = path.resolve(reactAppDistFolder, 'index.html');
+  const staticReactIndexHtmlPath = path.resolve(
+    reactAppDistFolder,
+    'index.html',
+  );
 
   app.set('view engine', 'html');
   app.set('views', reactAppDistFolder);
@@ -89,11 +94,11 @@ export function app(): express.Express {
     express.static(reactAppDistFolder, {
       maxAge: '1y',
       index: 'index.html',
-    })
+    }),
   );
   console.log('Serving static files from:', staticReactIndexHtmlPath);
 
-   // serve Angular app for unmatched routes
+  // serve Angular app for unmatched routes
   app.get(/(.*)/, (req, res) => {
     res.sendFile(staticReactIndexHtmlPath);
   });

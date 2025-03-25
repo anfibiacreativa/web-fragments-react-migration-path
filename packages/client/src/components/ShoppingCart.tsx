@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { useCart, updateQuantity, removeFromCart, clearCart } from '../utils/cartState';
+import {
+  useCart,
+  updateQuantity,
+  removeFromCart,
+  clearCart,
+} from '../utils/cartState';
 import { processPayment, PaymentRequest } from '../utils/paymentService';
 import styles from '../styles/ShoppingCart.module.css';
 import { useCartToggle } from '../utils/cartState';
@@ -25,7 +30,10 @@ const ShoppingCart: React.FC = () => {
       setProgress(0);
 
       const paymentData: PaymentRequest = {
-        amount: cart.reduce((total, item) => total + item.price * item.quantity, 0),
+        amount: cart.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0,
+        ),
         currency: 'EUR',
         userId: 'someUserId12345',
       };
@@ -75,12 +83,17 @@ const ShoppingCart: React.FC = () => {
 
         {isProcessingPayment && (
           <div className={styles.progressBar}>
-            <div className={styles.progress} style={{ width: `${progress}%` }}></div>
+            <div
+              className={styles.progress}
+              style={{ width: `${progress}%` }}
+            ></div>
           </div>
         )}
 
         {!isProcessingPayment && cart.length === 0 && progress === 0 && (
-          <p className={styles.message}>Your cart is empty. Add some products to get started!</p>
+          <p className={styles.message}>
+            Your cart is empty. Add some products to get started!
+          </p>
         )}
 
         {!isProcessingPayment && cart.length > 0 && (
@@ -88,22 +101,35 @@ const ShoppingCart: React.FC = () => {
             <ul className={styles.cartItems}>
               {cart.map((item) => (
                 <li key={item.id} className={styles.cartItem}>
-                  <img src={item.image} className={styles.cartImage} alt={item.name} />
+                  <img
+                    src={item.image}
+                    className={styles.cartImage}
+                    alt={item.name}
+                  />
                   <div className={styles.itemDetails}>
                     <h4>{item.name}</h4>
                     <p>${item.price}</p>
                   </div>
                   <div className={styles.cartItemsFooter}>
                     <div className={styles.quantityControls}>
-                      <button className="btn" onClick={() => updateQuantity(item.id, -1)}>
+                      <button
+                        className="btn"
+                        onClick={() => updateQuantity(item.id, -1)}
+                      >
                         -
                       </button>
                       <span>{item.quantity}</span>
-                      <button className="btn" onClick={() => updateQuantity(item.id, 1)}>
+                      <button
+                        className="btn"
+                        onClick={() => updateQuantity(item.id, 1)}
+                      >
                         +
                       </button>
                     </div>
-                    <button className="btn remove-btn" onClick={() => removeFromCart(item.id)}>
+                    <button
+                      className="btn remove-btn"
+                      onClick={() => removeFromCart(item.id)}
+                    >
                       x
                     </button>
                   </div>
@@ -113,7 +139,10 @@ const ShoppingCart: React.FC = () => {
             <div className={styles.cartSummary}>
               <p className={styles.total}>Total: ${total.toFixed(2)}</p>
             </div>
-            <button className="btn btn-primary" onClick={handleProceedToPayment}>
+            <button
+              className="btn btn-primary"
+              onClick={handleProceedToPayment}
+            >
               Proceed to Payment
             </button>
             {isError && <p className={styles.errorMessage}>{errorMessage}</p>}

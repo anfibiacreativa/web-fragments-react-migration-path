@@ -1,0 +1,6 @@
+pnpm-lock.yaml
+node_modules
+.devcontainer
+.vscode
+test-results
+start.sh

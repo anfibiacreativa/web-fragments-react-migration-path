@@ -36,6 +36,6 @@ export default defineConfig({
       command: 'pnpm run build && pnpm run server:start',
       url: 'http://localhost:4000',
       reuseExistingServer: useLocalServer,
-    }
-],
+    },
+  ],
 });

@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: '../server/dist/react-shell-app',
-    emptyOutDir: false
-  }
-})
+    emptyOutDir: false,
+  },
+});

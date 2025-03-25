@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import Root from '../routes/root';
 import CartPage from '../routes/cart';
 import StorePage from '../routes/store';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-
 const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Root />,
-	},
-	{
-		path: '/cart/*',
-		element: <CartPage />,
-	},
-	{
-		path: '/store/*',
-		element: <StorePage />,
-	},
+  {
+    path: '/',
+    element: <Root />,
+  },
+  {
+    path: '/cart/*',
+    element: <CartPage />,
+  },
+  {
+    path: '/store/*',
+    element: <StorePage />,
+  },
 ]);
 
 export const DelayedBootstrap: React.FC = () => {

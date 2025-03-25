@@ -27,13 +27,16 @@ const saveCart = () => {
 };
 
 // Functions to modify the cart
-export const addToCart = (product: CartItem, e: React.MouseEvent<HTMLButtonElement>) => {
+export const addToCart = (
+  product: CartItem,
+  e: React.MouseEvent<HTMLButtonElement>,
+) => {
   e.preventDefault();
   e.stopPropagation();
   const existingProduct = cart.find((item) => item.id === product.id);
   if (existingProduct) {
     cart = cart.map((item) =>
-      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
     );
   } else {
     cart = [...cart, { ...product, quantity: 1 }];
@@ -57,7 +60,9 @@ export const clearCart = () => {
 export const updateQuantity = (id: number, delta: number) => {
   cart = cart
     .map((item) =>
-      item.id === id ? { ...item, quantity: Math.max(0, item.quantity + delta) } : item
+      item.id === id
+        ? { ...item, quantity: Math.max(0, item.quantity + delta) }
+        : item,
     )
     .filter((item) => item.quantity > 0);
   saveCart();

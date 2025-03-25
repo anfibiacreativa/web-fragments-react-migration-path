@@ -38,14 +38,17 @@ const ProductGrid: React.FC = () => {
                 className="btn btn-primary"
                 onClick={(event) => {
                   event.stopPropagation(); // Prevent navigating when clicking "Add to Cart"
-                  addToCart({
-                    id: product.id,
-                    name: product.name,
-                    description: product.description,
-                    price: product.price,
-                    image: `/images/product${product.id}.png`,
-                    quantity: 1,
-                  }, event);
+                  addToCart(
+                    {
+                      id: product.id,
+                      name: product.name,
+                      description: product.description,
+                      price: product.price,
+                      image: `/images/product${product.id}.png`,
+                      quantity: 1,
+                    },
+                    event,
+                  );
                 }}
               >
                 Add to Cart

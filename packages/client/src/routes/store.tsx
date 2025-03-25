@@ -8,16 +8,16 @@ function App() {
 
   return (
     <Layout>
-      <div className='container'>
+      <div className="container">
         <div className={isCartOpen ? 'backdrop visible' : 'backdrop'}></div>
         <div className="hero">
           {/* <h1>Ecommerce Composable App with Web Fragments</h1> */}
           <Banner />
-          <button className='btn-toggle-cart' onClick={toggleCart}>
-            <i className='fa-solid fa-cart-shopping'></i>
+          <button className="btn-toggle-cart" onClick={toggleCart}>
+            <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </div>
-        <div className='layout'>
+        <div className="layout">
           {/* <ProductGrid /> */}
           {/*
 // @ts-expect-error: Fragment outlet is not recognized by TypeScript */}

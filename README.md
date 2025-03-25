@@ -18,19 +18,19 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/anfibiacreativa/web-fragments-react-migration-path)
 
-
 </div>
 
 ## Overview
 
-This sample demonstrates how to migrate a monolithic React.js client-side SPA e-commerce application to a micro-frontend architecture using  [Web Fragments](https://github.com/web-fragments/web-fragments).
-
+This sample demonstrates how to migrate a monolithic React.js client-side SPA e-commerce application to a micro-frontend architecture using [Web Fragments](https://github.com/web-fragments/web-fragments).
 
 Web Fragments are a radically new approach to Web micro-frontends which is framework, tooling, and platform agnostic.
 
 New to micro-frontends? Check out https://microfrontend.dev
 
 ## Getting started
+
+### Local build
 
 Clone or fork this repo, and then run
 
@@ -40,15 +40,24 @@ at root level.
 
 This will build the client-side shell and the server, and will start the server on port `8080`.
 
+### Local devcontainer with Docker
+
+Make sure [Docker] is installed in your system. Go to the root of the project and run
+
+`docker build -t web-fragments-shell-app . `
+
+You can then run
+
+`pnpm i && pnpm build && pnpm start`
+
 ## Application design
 
-The e-commerce application consists of a `store` route featuring a catalog and the shopping cart area. 
+The e-commerce application consists of a `store` route featuring a catalog and the shopping cart area.
 
 ![webfragments_demo_homepage](https://github.com/user-attachments/assets/1990859c-ce48-49b5-8c99-0d53a82c6625)
 
 Catalog cards link directly to the product detail page.
 ![webfragments_demo_detail](https://github.com/user-attachments/assets/174c2487-8043-44bc-a546-91e41b02233b)
-
 
 ## Application structure
 
@@ -60,14 +69,14 @@ The user interface is composed by the following components
 - product card
 - shopping cart
 
-## Migration excercise 
+## Migration excercise
 
 The decoupling and migration excercise consists in horizontally splitting the monolithic UI and codebase into multiple applications that are independently developed, released, versioned and deployed, with the following correspondence,
 
 Homepage + productpage -> Shell application React.js client-side
 Product catalog -> Micro-frontend split 1 -> [Nuxt.js](https://nuxt.com/)
 Product detail -> Micro-frontend split 2 -> [Nuxt.js](https://nuxt.com/)
-Shopping cart -> Micro-frontend split 3 -> [Qwik](https://qwik.dev/) 
+Shopping cart -> Micro-frontend split 3 -> [Qwik](https://qwik.dev/)
 
 ## Come back soon! We have more!
 

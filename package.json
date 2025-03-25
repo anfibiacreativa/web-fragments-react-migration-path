@@ -8,10 +8,12 @@
   "scripts": {
     "build": "pnpm install && pnpm --filter react-shell-app build && pnpm --filter shell-prod-server build",
     "start": "pnpm --filter shell-prod-server start:server:react",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "pnpm": "^9.14.2"
+    "pnpm": "^9.14.2",
+    "prettier": "^3.5.3"
   },
   "keywords": [],
   "author": "",
