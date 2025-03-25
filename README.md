@@ -18,6 +18,8 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/anfibiacreativa/web-fragments-react-migration-path)
 
+_Note: StackBlitz only supports until `pnpm 8.15.6`, so the use of `catalog:` is not possible. Please update any use of `catalog:` in `server/package.json` and `client/package.json` with `latest`. For `typescript` use `5.5.4`_
+
 </div>
 
 ## Overview
