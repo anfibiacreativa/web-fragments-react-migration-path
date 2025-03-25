@@ -1,7 +1,7 @@
 {
   "name": "shell-prod-server",
   "version": "1.0.0",
-  "description": "Prod server for the angular app bootstrapping the fragments",
+  "description": "Prod server for the react app bootstrapping the Web Fragments",
   "main": "dist/react-app.js",
   "type": "module",
   "private": true,
@@ -16,14 +16,14 @@
   },
   "dependencies": {
     "express": "^5.0.1",
-    "web-fragments": "catalog:"
+    "web-fragments": "latest"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.3",
     "ts-node-dev": "^2.0.0",
-    "typescript": "catalog:"
+    "typescript": "5.5.4"
   },
   "keywords": [
     "prod-server",
