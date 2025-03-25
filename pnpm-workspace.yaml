@@ -1,0 +1,9 @@
+packages:
+  - "./packages/**"
+
+catalog:
+  typescript: 5.5.4
+  vite: 6.0.7
+  wrangler: 3.109.3
+  '@playwright/test': 1.49.1
+  web-fragments: latest

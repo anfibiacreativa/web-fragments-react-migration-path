@@ -1,0 +1,26 @@
+# Compiled source # and build directories
+node_modules
+dist
+
+# Test directories
+test-results
+
+
+# Configuration files
+*.log
+.azure
+.deployment
+.env
+
+# macOS and Linux compression files
+*.DS_Store
+*.dmg
+*.gz
+*.gzip
+*.tar.bz2
+*.tar.xz
+*.tgz
+*.zip
+*.tar
+*.tar.gz
+

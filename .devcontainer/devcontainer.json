@@ -1,0 +1,31 @@
+{
+    "name": "WebFragments Shell Dev",
+    "build": {
+      "dockerfile": "./Dockerfile"
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "20",
+        "packageManager": "pnpm"
+      }
+    },
+    "forwardPorts": [8080],
+    "postCreateCommand": "pnpm install && pnpm run build",
+    "mounts": [
+      "source=pnpm-store,target=/pnpm-store,type=volume"
+    ],
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "terminal.integrated.defaultProfile.linux": "zsh"
+        },
+        "extensions": [
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint"
+        ]
+      }
+    }
+  }
+  

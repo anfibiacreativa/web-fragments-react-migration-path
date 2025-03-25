@@ -1,0 +1,64 @@
+.cart {
+  padding: 1rem;
+}
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.cartItemsFooter {
+  display: flex;
+}
+.cartImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cartSummary {
+  margin-top: 2rem;
+  text-align: right;
+}
+.total {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.errorMessage {
+  background-color: red;
+  margin-top: 10px;
+  padding: 20px;
+  color: white;
+  font-size: small;
+}
+.statusMessage {
+  margin-top: 20px;
+  text-align: center;
+}
+.progressBar {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  height: 10px; /* Ensure a fixed height */
+  margin: 10px 0;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid black; /* Optional: For debugging */
+}
+
+.progress {
+  background-color: #4caf50;
+  height: 100%; /* Matches parent height */
+  transition: width 0.5s ease;
+}

@@ -1,0 +1,314 @@
+/* Reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+#__next {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Global styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f8f9fa;
+    --text-color: #2c3e50;
+}
+
+.title,
+h1 {
+  font-size: 3vw; /* Make h1 font size responsive */
+  background: linear-gradient(90deg, fuchsia, turquoise);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin: 50px 0 20px 0;
+  text-align: center;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2vw; /* Make h2 font size responsive */
+  background: linear-gradient(90deg, fuchsia, turquoise);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 1.5vw; /* Make h3 font size responsive */
+  background: linear-gradient(90deg, fuchsia, turquoise);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #001736; /* Dark grayish blue */
+  color: white;
+  text-align: center;
+  padding: 16px;
+  height: 200px;
+  width: 100%;
+  margin-top: auto; /* Always push footer to the bottom */
+}
+
+/* Links */
+a {
+  color: fuchsia;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 89, 185);
+  text-decoration: underline;
+}
+
+/* Menu container */
+
+.hero {
+  height: 150px;
+}
+
+/* Header icon links */
+.header a.icon-link {
+  margin-right: 16px; /* Space between the icons */
+  color: white; /* Default color for the icons */
+  font-size: 24px; /* Icon size */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect */
+.header a.icon-link:hover {
+  color: fuchsia; /* Change to fuchsia on hover */
+}
+
+fragment-outlet {
+  outline: 3px dotted transparent;
+  border-radius: 20px;
+}
+
+/* add borders */
+body.fragment-border fragment-outlet {
+  outline-color: rgb(65, 155, 234);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #34495e;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 6vw; /* Adjust font size for very small screens */
+  }
+
+  h2 {
+    font-size: 4vw; /* Adjust h2 font size for smaller screens */
+  }
+
+  h3 {
+    font-size: 3vw; /* Adjust h3 font size for smaller screens */
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.layout_homepage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: dense;
+  grid-template-areas:
+      'right'
+      'left';
+}
+
+@media screen and (min-width: 900px) {
+  .btn-toggle-cart {
+    display: none;
+  }
+  .btn-toggle-cart.close {
+    display: none;
+  }
+  .layout {
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    padding: 2rem 0;
+    grid-template-areas:
+    'left right';
+  }
+  .cart-sidebar {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    z-index: 3;
+    box-shadow: none;
+  }
+  .backdrop {
+    display: none;
+    visibility: 0;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9;
+}
+
+.backdrop.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-toggle-cart {
+  margin-top: -50px;
+  background-color: fuchsia;
+  border: 2px solid fuchsia;
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+  transition: color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.btn-toggle-cart.close {
+  margin-top: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.btn-toggle-cart:hover {
+  color: fuchsia;
+  background-color: white;
+  transform: scale(1.1);
+  transition: all 0.3s linear;
+}
+
+.btn-toggle-cart.close:hover {
+  transform: none;
+}
+
+.cartSidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden off-screen */
+  width: 80%; /* Panel width */
+  height: 100%; /* Full height */
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transform: translateX(100%); /* Hidden state */
+}
+.cartSidebar.open {
+  transform: translateX(0);
+  right: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .cartSidebar {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    z-index: 3;
+    box-shadow: none;
+    grid-area: right;
+  }
+  .layout_homepage {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "webfragments-shell-app",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "packageManager": "pnpm@9.14.2",
+  "scripts": {
+    "build": "pnpm install && pnpm --filter react-shell-app build && pnpm --filter shell-prod-server build && cp ./packages/server/web.config ./packages/server/dist/web.config",
+    "start": "pnpm --filter shell-prod-server start:server:react",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "pnpm": "^9.14.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
