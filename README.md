@@ -16,7 +16,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anfibiacreativa/web-fragments-react-migration-path?devcontainer_path=.devcontainer/devcontainer.json)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/anfibiacreativa/web-fragments-react-migration-path})
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/anfibiacreativa/web-fragments-react-migration-path)
 
 
 </div>
