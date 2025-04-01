@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Checkout Tests', () => {
-  const PAYMENT_ENDPOINT = 'http://localhost:3000/create-payment';
-  const HAR_PATH = './packages/polylithic-app/shell-prod-server/tests/e2e/';
+  const PAYMENT_ENDPOINT = 'http://localhost:8080/api/create-payment';
+  const HAR_PATH = './packages/server/tests/e2e/';
 
   test('Add to cart and proceed to checkout', async ({ page }) => {
     await page.goto('/store/catalog');

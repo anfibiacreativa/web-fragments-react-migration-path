@@ -10,7 +10,7 @@ export default defineConfig({
   expect: { timeout: 5000 },
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:4000',
+    baseURL: 'http://localhost:8080',
     browserName: 'chromium',
     trace: 'on-first-retry',
     headless: true,
@@ -23,18 +23,8 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: 'cd ../qwik-shopping-cart && pnpm preview',
-      url: 'http://localhost:4173',
-      reuseExistingServer: useLocalServer,
-    },
-    {
-      command: 'cd ../analog-product-catalog && pnpm preview',
-      url: 'http://localhost:4174',
-      reuseExistingServer: useLocalServer,
-    },
-    {
-      command: 'pnpm run build && pnpm run server:start',
-      url: 'http://localhost:4000',
+      command: 'pnpm i && pnpm build && pnpm start',
+      url: 'http://localhost:8080',
       reuseExistingServer: useLocalServer,
     },
   ],
