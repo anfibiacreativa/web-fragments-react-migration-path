@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { FragmentGateway } from 'web-fragments/gateway';
 import { getNodeMiddleware } from 'web-fragments/gateway/node';
+import { createPaymentIntent, getPaymentStatus } from './payment-service-mock.js';
 
 const PORT = process.env.PORT || 8080;
 const storeFragmentEndpoint =
@@ -77,6 +78,7 @@ gateway.registerFragment({
 export function app(): express.Express {
   const app = express();
 
+  app.use(express.json()); // Add body-parser middleware
   app.use(getNodeMiddleware(gateway, { mode: 'development' }));
 
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -98,7 +100,39 @@ export function app(): express.Express {
   );
   console.log('Serving static files from:', staticReactIndexHtmlPath);
 
-  // serve Angular app for unmatched routes
+  // to simplify the example, we are adding the api calls to the same server
+  // but in a real world example, you can deploy the api on a different server
+  // or use a serverless function
+  // API Routes
+  app.get('/api', (req, res) => {
+    res.json({ status: 'Payment service is running' });
+  });
+
+  app.post('/api/create-payment', (req, res) => {
+    const { amount, currency, userId } = req.body;
+    if (!amount || !currency || !userId) {
+      res.status(400).json({ error: 'Missing required fields' });
+      return;
+    }
+    const paymentIntent = createPaymentIntent({ amount, currency, userId });
+    res.status(201).json(paymentIntent);
+  });
+
+  app.get('/api/payment-status/:paymentId', (req, res) => {
+    const { paymentId } = req.params;
+    if (!paymentId) {
+      res.status(400).json({ error: 'Payment ID is required' });
+      return;
+    }
+    const status = getPaymentStatus(paymentId);
+    if (!status) {
+      res.status(404).json({ error: 'Payment not found' });
+      return;
+    }
+    res.json({ paymentId, status });
+  });
+
+  // serve React app for unmatched routes
   app.get(/(.*)/, (req, res) => {
     res.sendFile(staticReactIndexHtmlPath);
   });
