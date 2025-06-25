@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-product-catalog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "NITRO_PORT=4001 HOST=0.0.0.0 nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "NITRO_PORT=4175 nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy:worker": "pnpm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "nuxt": "^3.15.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250417.0",
+		"nitro-cloudflare-dev": "^0.2.2",
+		"nitropack": "^2.11.9",
+		"wrangler": "^4.12.0"
+  }
+}
