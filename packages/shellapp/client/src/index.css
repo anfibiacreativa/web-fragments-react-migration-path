@@ -322,16 +322,18 @@ a {
 }
 
 .btn-toggle-cart {
-  margin-top: -50px;
-  background-color: fuchsia;
-  border: 2px solid fuchsia;
-  color: white;
-  border-radius: 50%;
-  padding: 20px;
-  transition: color 0.3s ease;
-  position: relative;
-  cursor: pointer;
-  font-size: 30px;
+    margin-top: -227px;
+    left: 90px;
+    background-color: transparent;
+    border: 0;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+    transition: color .3s ease;
+    position: fixed;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 20;
 }
 
 .btn-toggle-cart.close {
@@ -342,7 +344,6 @@ a {
 
 .btn-toggle-cart:hover {
   color: fuchsia;
-  background-color: white;
   transform: scale(1.1);
   transition: all 0.3s linear;
 }

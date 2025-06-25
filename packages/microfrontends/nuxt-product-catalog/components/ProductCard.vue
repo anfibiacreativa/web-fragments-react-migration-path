@@ -37,5 +37,8 @@ const addToCart = (product: Product) => {
   padding: 1rem;
   transition: transform 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 </style>

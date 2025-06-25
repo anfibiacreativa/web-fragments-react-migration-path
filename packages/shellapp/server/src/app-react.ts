@@ -14,9 +14,9 @@ config({ path: path.resolve(process.cwd(), '.env') });
 
 const PORT = process.env.PORT || 8080;
 const storeFragmentEndpoint =
-  process.env.STORE_FRAGMENT_ENDPOINT || 'http://127.0.0.1:8787';
+  process.env.STORE_FRAGMENT_ENDPOINT || 'http://localhost:8787';
 const cartFragmentEndpoint =
-  process.env.CART_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4175';
+  process.env.CART_FRAGMENT_ENDPOINT || 'http://localhost:8788';
 
 // start the gateway
 const gateway = new FragmentGateway({
