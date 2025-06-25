@@ -33,5 +33,7 @@
 
 /* Hover effect */
 .iconLink:hover {
-  color: fuchsia; /* Change to fuchsia on hover */
+  color: fuchsia;
+  transform: scale(1.1);
+  transition: all 0.3s linear;/* Change to fuchsia on hover */
 }
