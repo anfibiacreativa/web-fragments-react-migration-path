@@ -3,17 +3,24 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { FragmentGateway } from 'web-fragments/gateway';
 import { getNodeMiddleware } from 'web-fragments/gateway/node';
-import { createPaymentIntent, getPaymentStatus } from './payment-service-mock.js';
+import { config } from 'dotenv';
+import {
+  createPaymentIntent,
+  getPaymentStatus,
+} from './payment-service-mock.js';
+
+// Load environment variables from the root .env file
+config({ path: path.resolve(process.cwd(), '.env') });
 
 const PORT = process.env.PORT || 8080;
 const storeFragmentEndpoint =
-  process.env.STORE_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4175';
+  process.env.STORE_FRAGMENT_ENDPOINT || 'http://127.0.0.1:8787';
 const cartFragmentEndpoint =
-  process.env.CART_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4173';
+  process.env.CART_FRAGMENT_ENDPOINT || 'http://127.0.0.1:4175';
 
 // start the gateway
 const gateway = new FragmentGateway({
-  prePiercingStyles: `<style id="fragment-piercing-styles" type="text/css">
+  piercingStyles: `<style id="fragment-piercing-styles" type="text/css">
       web-fragment-host[data-piercing="true"] {
         z-index: 1;
 
@@ -44,7 +51,7 @@ const gateway = new FragmentGateway({
 // register fragment: nuxt
 gateway.registerFragment({
   fragmentId: 'store',
-  prePiercingClassNames: ['store'],
+  piercingClassNames: ['store'],
   routePatterns: ['/store/:_*', '/_fragment/nuxt/:_*'],
   endpoint: storeFragmentEndpoint,
   onSsrFetchError: () => ({
@@ -61,7 +68,7 @@ gateway.registerFragment({
 // register fragment: qwik
 gateway.registerFragment({
   fragmentId: 'cart',
-  prePiercingClassNames: ['cart'],
+  piercingClassNames: ['cart'],
   routePatterns: ['/cart/:_*', '/_fragment/qwik/:_*'],
   endpoint: cartFragmentEndpoint,
   onSsrFetchError: () => ({

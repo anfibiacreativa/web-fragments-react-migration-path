@@ -132,7 +132,6 @@ export const ShoppingCart = component$(() => {
   const total = cart.items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
   // load cart from localStorage or fallback to initial products
-  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     const savedCart = localStorage.getItem('shoppingCart');
     if (savedCart) {

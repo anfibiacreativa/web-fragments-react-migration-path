@@ -7,14 +7,13 @@
   "private": true,
   "scripts": {
     "start:server:react": "node dist/app-react.js",
-    "start:server:angular": "node dist/app-angular.js",
-    "dev:angular": "ts-node-dev --respawn src/app-angular.ts",
-    "dev:react": "ts-node-dev --respawn src/app-react.ts",
+    "dev:react": "ts-node-dev --respawn --esm src/app-react.ts",
     "build": "tsc",
     "clean": "rm -rf dist",
     "test:e2e": "npx playwright test"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.0.1",
     "web-fragments": "catalog:"
   },
