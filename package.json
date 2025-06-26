@@ -9,9 +9,13 @@
     "build": "pnpm install && pnpm --filter react-shell-app build && pnpm --filter shell-prod-server build",
     "start": "pnpm --filter shell-prod-server start:server:react",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:all": "pnpm install && pnpm --recursive run build",
+    "start:dev": "concurrently -n nuxt,qwik,react,server,payment -c green,blue,yellow,cyan,magenta \"pnpm --filter nuxt-product-catalog dev\" \"pnpm --filter qwik-shopping-cart dev\" \"pnpm --filter react-shell-app dev\" \"pnpm --filter shell-prod-server dev:react\" \"pnpm --filter @demongbe/payment dev\"",
+    "start:prod": "pnpm build:all && concurrently -n nuxt,qwik,server,payment -c green,blue,cyan,magenta \"pnpm --filter nuxt-product-catalog preview\" \"pnpm --filter qwik-shopping-cart preview\" \"pnpm --filter shell-prod-server start:server:react\" \"pnpm --filter @demongbe/payment start\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "pnpm": "^9.14.2",
     "prettier": "^3.5.3"
   },
