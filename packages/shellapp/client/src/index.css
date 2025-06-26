@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
 /* Reset styles */
 html,
 body,
@@ -117,10 +121,19 @@ section {
   --text-color: #2c3e50;
 }
 
+body {
+  margin: 0;
+  font-family: 'Noto Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.5;
+}
+
 .title,
 h1 {
   font-size: 3vw; /* Make h1 font size responsive */
   background: linear-gradient(90deg, fuchsia, turquoise);
+  font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -132,6 +145,7 @@ h1 {
 h2 {
   font-size: 2vw; /* Make h2 font size responsive */
   background: linear-gradient(90deg, fuchsia, turquoise);
+  font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -141,6 +155,7 @@ h2 {
 h3 {
   font-size: 1.5vw; /* Make h3 font size responsive */
   background: linear-gradient(90deg, fuchsia, turquoise);
+  font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -160,6 +175,7 @@ h3 {
 
 /* Links */
 a {
+  font-family: 'Tilt Neon', sans-serif;
   color: fuchsia;
   text-decoration: none;
 }
@@ -196,7 +212,8 @@ fragment-outlet {
 
 /* add borders */
 body.fragment-border fragment-outlet {
-  outline-color: rgb(65, 155, 234);
+  outline-color: rgb(133, 169, 201);
+  border-radius: 5px;
 }
 
 body {

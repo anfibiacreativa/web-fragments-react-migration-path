@@ -17,6 +17,10 @@ function App() {
             <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </div>
+        {/*
+        // @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
+
+        <web-fragment fragment-id="slogan" src="/" />
         <div className="layout">
           {/* <ProductGrid /> */}
           {/*

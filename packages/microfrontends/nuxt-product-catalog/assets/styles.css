@@ -1,3 +1,7 @@
+/* Import Noto Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
 :root {
   --primary-color: #646cff;
   --primary-color-dark: #535bf2;
@@ -9,13 +13,15 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    'Noto Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   line-height: 1.5;
 }
 
 h1 {
+  font-family: 'Tilt Neon', sans-serif;
   font-size: 3vw; /* Make h1 font size responsive */
   background: linear-gradient(90deg, fuchsia, turquoise);
   -webkit-background-clip: text;
@@ -97,11 +103,12 @@ a {
 
 .product-card p {
   margin: 0 0 1.5rem 0;
-  color: #666;
+  color: #484b4e;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 14px;
 }
 
 .product-card .footer {
@@ -109,6 +116,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  margin-top: 1rem;
 }
 
 .product-card .price {
@@ -129,10 +137,11 @@ a {
 
 .button:hover {
   background-color: #1c98f1;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
@@ -167,4 +176,3 @@ a {
   background: white;
   border-radius: 4px;
 }
-
