@@ -11,7 +11,7 @@ export default function (opts: RenderToStreamOptions) {
 		...opts,
 	// TODO: why not /_fragment/qwik/assets/build ???
 	// if we set it to that, we get duplicate path prefix in asset urls
-	base: "/_fragment/qwik/assets/build",
+	base: "_fragment/qwik/assets/build",
 		// needed for reframing/fragmenting
 		containerTagName: "qwik-fragment",
 	serverData: {
