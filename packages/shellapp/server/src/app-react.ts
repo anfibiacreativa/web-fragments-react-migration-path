@@ -17,6 +17,8 @@ const storeFragmentEndpoint =
   process.env.STORE_FRAGMENT_ENDPOINT || 'http://localhost:4174';
 const cartFragmentEndpoint =
   process.env.CART_FRAGMENT_ENDPOINT || 'http://localhost:4175';
+const sloganFragmentEndpoint =
+  process.env.SLOGAN_FRAGMENT_ENDPOINT || 'http://localhost:4176';
 
 // start the gateway
 const gateway = new FragmentGateway({
@@ -48,7 +50,7 @@ const gateway = new FragmentGateway({
     </style>`,
 });
 
-// register fragment: nuxt
+// register fragment: nuxt catalog
 gateway.registerFragment({
   fragmentId: 'store',
   piercingClassNames: ['store'],
@@ -65,10 +67,10 @@ gateway.registerFragment({
   }),
 });
 
-// register fragment: qwik
+// register fragment: qwik cart
 gateway.registerFragment({
   fragmentId: 'cart',
-  piercingClassNames: ['cart'],
+  piercingClassNames: [],
   routePatterns: ['/cart/:_*', '/_fragment/qwik/:_*'],
   endpoint: cartFragmentEndpoint,
   onSsrFetchError: () => ({
@@ -76,6 +78,23 @@ gateway.registerFragment({
       `<p id="cart-fragment-not-found">
          <style>#cart-fragment-not-found { color: red; font-size: 2rem; }</style>
          Cart fragment could not be loaded
+       </p>`,
+      { headers: [['content-type', 'text/html']] },
+    ),
+  }),
+});
+
+// register fragment: nuxt slogan
+gateway.registerFragment({
+  fragmentId: 'slogan',
+  piercingClassNames: [],
+  routePatterns: ['/', '/_fragment/nuxt-ai/:_*'],
+  endpoint: sloganFragmentEndpoint,
+  onSsrFetchError: () => ({
+    response: new Response(
+      `<p id="cart-fragment-not-found">
+         <style>#slogan-fragment-not-found { color: red; font-size: 2rem; }</style>
+         Slogan fragment could not be loaded
        </p>`,
       { headers: [['content-type', 'text/html']] },
     ),

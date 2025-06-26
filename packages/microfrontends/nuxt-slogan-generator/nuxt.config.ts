@@ -1,14 +1,12 @@
-import { defineNuxtConfig } from 'nuxt/config';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  compatibilityDate: '2024-11-01',
   ssr: true,
   app: {
-    buildAssetsDir: '/_fragment/nuxt/assets/',
+    buildAssetsDir: '/_fragment/nuxt-ai/assets/',
     head: {
-      title: 'Nuxt Product Catalog',
+      title: 'Nuxt Slogan Generator',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,9 +19,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  routeRules: {
-    '/': { redirect: '/store/catalog' },
-  },
   nitro: {
     // preset: "cloudflare-module",
     // cloudflare: {
@@ -35,11 +30,10 @@ export default defineNuxtConfig({
     },
     publicAssets: [
       {
-        dir: 'dist/public/_fragment/nuxt/assets',
-        baseURL: '/_fragment/nuxt/assets/',
+        dir: 'dist/public/_fragment/nuxt-ai/assets',
+        baseURL: '/_fragment/nuxt-ai/assets/',
       },
     ],
   },
-  css: ['~/assets/styles.css'],
   // modules: ["nitro-cloudflare-dev"]
-});
+})

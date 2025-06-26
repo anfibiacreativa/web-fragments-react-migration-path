@@ -1,0 +1,21 @@
+{
+  "name": "ai-slogan-service",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "PORT=3001 node dist/index.js"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.11",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.5"
+  }
+}
