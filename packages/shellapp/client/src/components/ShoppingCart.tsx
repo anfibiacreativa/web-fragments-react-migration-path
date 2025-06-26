@@ -1,75 +1,71 @@
 import React, { useState } from 'react';
 import {
-  useCart,
-  updateQuantity,
-  removeFromCart,
-  clearCart,
+  useCart
 } from '../utils/cartState';
-import { processPayment, PaymentRequest } from '../utils/paymentService';
+// import { processPayment, PaymentRequest } from '../utils/paymentService';
 import styles from '../styles/ShoppingCart.module.css';
 import { useCartToggle } from '../utils/cartState';
 
 const ShoppingCart: React.FC = () => {
   const cart = useCart();
   const { isCartOpen, toggleCart } = useCartToggle();
-  const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [message, setMessage] = useState('');
-  const [progress, setProgress] = useState(0);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [isError] = useState(false);
+  const [errorMessage] = useState('');
+  // const [message, setMessage] = useState('');
+  const [isProcessingPayment] = useState(false);
 
-  const handleProceedToPayment = async () => {
-    if (cart.length === 0) {
-      alert('Your cart is empty. Please add items to proceed.');
-      return;
-    }
+  // const handleProceedToPayment = async () => {
+  //   if (cart.length === 0) {
+  //     alert('Your cart is empty. Please add items to proceed.');
+  //     return;
+  //   }
 
-    try {
-      setIsProcessingPayment(true);
-      setMessage('Processing your payment... Please wait.');
-      setProgress(0);
+  //   try {
+  //     setIsProcessingPayment(true);
+  //     setMessage('Processing your payment... Please wait.');
+  //     setProgress(0);
 
-      const paymentData: PaymentRequest = {
-        amount: cart.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0,
-        ),
-        currency: 'EUR',
-        userId: 'someUserId12345',
-      };
+  //     const paymentData: PaymentRequest = {
+  //       amount: cart.reduce(
+  //         (total, item) => total + item.price * item.quantity,
+  //         0,
+  //       ),
+  //       currency: 'EUR',
+  //       userId: 'someUserId12345',
+  //     };
 
-      console.log('Attempting payment with total:', paymentData.amount);
-      const response = await processPayment(paymentData);
-      console.log('Payment successful:', response);
+  //     console.log('Attempting payment with total:', paymentData.amount);
+  //     const response = await processPayment(paymentData);
+  //     console.log('Payment successful:', response);
 
-      const interval = setInterval(() => {
-        setProgress((prevProgress) => {
-          const nextProgress = prevProgress + 10;
-          if (nextProgress >= 100) {
-            clearInterval(interval);
-            setProgress(0);
-            setMessage('');
-            clearCart();
-            setIsProcessingPayment(false);
-          }
-          return nextProgress;
-        });
-      }, 500);
-    } catch (error) {
-      if (error instanceof Error) {
-        setErrorMessage(error.message);
-        setIsError(true);
-        setIsProcessingPayment(false);
-        showErrorNotification(error.message);
-      }
-    }
-  };
+  //     const interval = setInterval(() => {
+  //       setProgress((prevProgress) => {
+  //         const nextProgress = prevProgress + 10;
+  //         if (nextProgress >= 100) {
+  //           clearInterval(interval);
+  //           setProgress(0);
+  //           setMessage('');
+  //           clearCart();
+  //           setIsProcessingPayment(false);
+  //         }
+  //         return nextProgress;
+  //       });
+  //     }, 500);
+  //   } catch (error) {
+  //     if (error instanceof Error) {
+  //       setErrorMessage(error.message);
+  //       setIsError(true);
+  //       setIsProcessingPayment(false);
+  //       showErrorNotification(error.message);
+  //     }
+  //   }
+  // };
 
-  const showErrorNotification = (error: string) => {
-    alert(`Payment failed: ${error}`);
-  };
+  // const showErrorNotification = (error: string) => {
+  //   alert(`Payment failed: ${error}`);
+  // };
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  // const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <aside className={isCartOpen ? 'cartSidebar open' : 'cartSidebar'}>
@@ -79,7 +75,7 @@ const ShoppingCart: React.FC = () => {
       <div className={styles.cart}>
         <h3>Your Shopping Cart</h3>
 
-        {message && <p className={styles.statusMessage}>{message}</p>}
+        {/* {message && <p className={styles.statusMessage}>{message}</p>}
 
         {isProcessingPayment && (
           <div className={styles.progressBar}>
@@ -88,17 +84,19 @@ const ShoppingCart: React.FC = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-        )}
-
-        {!isProcessingPayment && cart.length === 0 && progress === 0 && (
+        )} */}
+        {/* @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
+        <web-fragment fragment-id="cart" src="/cart" />
+        {cart.length === 0 && (
           <p className={styles.message}>
-            Your cart is empty. Add some products to get started!
+
+            <i className="fa-solid fa-box-open fa-10x fa-bounce"></i>
           </p>
         )}
 
         {!isProcessingPayment && cart.length > 0 && (
           <>
-            <ul className={styles.cartItems}>
+            {/* <ul className={styles.cartItems}>
               {cart.map((item) => (
                 <li key={item.id} className={styles.cartItem}>
                   <img
@@ -138,13 +136,13 @@ const ShoppingCart: React.FC = () => {
             </ul>
             <div className={styles.cartSummary}>
               <p className={styles.total}>Total: ${total.toFixed(2)}</p>
-            </div>
-            <button
+            </div> */}
+            {/* <button
               className="btn btn-primary"
               onClick={handleProceedToPayment}
             >
               Proceed to Payment
-            </button>
+            </button> */}
             {isError && <p className={styles.errorMessage}>{errorMessage}</p>}
           </>
         )}

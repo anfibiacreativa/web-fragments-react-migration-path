@@ -165,7 +165,6 @@ export const ShoppingCart = component$(() => {
   return (
     <>
       <div class="cart">
-        <h3 class="subtitle">Your Shopping Cart</h3>
 
         {cart.message ? (
           <>
@@ -175,16 +174,18 @@ export const ShoppingCart = component$(() => {
           </div>
          </>
         ) : cart.items.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p>Your cart is empty. Add some swag and have fun!</p>
         ) : (
           <>
             <ul class="cart-items">
               {cart.items.map((item) => (
                 <li key={item.product.id} class="cart-item">
-                  <img src={item.product.imageUrl} alt={item.product.name} width="80" height="80" />
-                  <div class="item-details">
-                    <h3 class="subtitle">{item.product.name}</h3>
-                    <p>${item.product.price.toFixed(2)}</p>
+                  <div class="cart-item-details">
+                    <img src={item.product.imageUrl} alt={item.product.name} width="80" height="80" />
+                    <div class="item-details">
+                      <h3 class="subtitle">{item.product.name}</h3>
+                      <p>${item.product.price.toFixed(2)}</p>
+                    </div>
                   </div>
                   <div class="cart-items-footer">
                     <div class="quantity-controls">

@@ -121,7 +121,7 @@ section {
 .title,
 h1 {
   font-size: 3vw; /* Make h1 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -132,7 +132,7 @@ h1 {
 
 h2 {
   font-size: 2vw; /* Make h2 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -141,7 +141,7 @@ h2 {
 
 h3 {
   font-size: 1.5vw; /* Make h3 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -161,7 +161,7 @@ h3 {
 
 /* Links */
 a {
-  color: fuchsia;
+  color: #ff1493;
   text-decoration: none;
 }
 
@@ -187,7 +187,7 @@ a:hover {
 
 /* Hover effect */
 .header a.icon-link:hover {
-  color: fuchsia; /* Change to fuchsia on hover */
+  color: #ff1493; /* Change to #ff1493 on hover */
 }
 
 fragment-outlet {
@@ -329,18 +329,18 @@ a {
 }
 
 .btn-toggle-cart {
-    margin-top: -227px;
-    left: 95px;
-    background-color: transparent;
-    border: 0;
-    color: #ffffff;
-    border-radius: 50%;
-    padding: 10px;
-    transition: color .3s ease;
-    position: fixed;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 20;
+  margin-top: -227px;
+  left: 95px;
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: color 0.3s ease;
+  position: fixed;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 20;
 }
 
 .btn-toggle-cart.close {
@@ -350,7 +350,7 @@ a {
 }
 
 .btn-toggle-cart:hover {
-  color: fuchsia;
+  color: #ff1493;
   background-color: white;
   transform: scale(1.1);
   transition: all 0.3s linear;
