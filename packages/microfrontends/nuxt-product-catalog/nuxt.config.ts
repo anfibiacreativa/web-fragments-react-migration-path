@@ -19,10 +19,10 @@ export default defineNuxtConfig({
     '/': { redirect: '/store/catalog' },
   },
   nitro: {
-    preset: "cloudflare-module",
-    cloudflare: {
-      nodeCompat: true
-    },
+    // preset: "cloudflare-module",
+    // cloudflare: {
+    //   nodeCompat: true
+    // },
     output: {
       dir: 'dist',
       publicDir: 'dist/public',
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     ]
   },
   css: ['~/assets/styles.css'],
-  modules: ["nitro-cloudflare-dev"]
+  // modules: ["nitro-cloudflare-dev"]
 })
 
 

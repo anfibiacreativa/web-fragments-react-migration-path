@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev": "NITRO_PORT=4001 HOST=0.0.0.0 nuxt dev",
     "generate": "nuxt generate",
-    "preview": "NITRO_PORT=4175 nuxt preview",
+    "preview": "NITRO_PORT=4174 nuxt preview",
     "postinstall": "nuxt prepare",
     "deploy:worker": "pnpm run build && wrangler deploy"
   },
