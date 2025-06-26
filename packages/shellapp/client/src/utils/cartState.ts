@@ -26,13 +26,58 @@ const saveCart = () => {
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
 };
 
+// Initialize BroadcastChannel listener for cart updates from fragments
+let bc: BroadcastChannel | null = null;
+
+if (typeof window !== 'undefined') {
+  bc = new BroadcastChannel('/cart');
+
+  bc.onmessage = (event) => {
+    const { type, product } = event.data;
+
+    if (type === 'add_to_cart' && product) {
+      // Map the received product to our CartItem structure
+      const cartItem: CartItem = {
+        id: typeof product.id === 'number' ? product.id : parseInt(product.id),
+        name: product.name,
+        description: product.description || '',
+        price: product.price,
+        quantity: 1,
+        image: product.imageUrl || product.image || '/product14.webp',
+      };
+
+      console.log('Received cart item from fragment:', cartItem);
+
+      // Check if the item is already in the cart
+      const existingProduct = cart.find((item) => item.id === cartItem.id);
+
+      if (existingProduct) {
+        cart = cart.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
+      } else {
+        cart = [...cart, cartItem];
+      }
+
+      saveCart();
+      notifyListeners();
+    }
+  };
+}
+
 // Functions to modify the cart
 export const addToCart = (
   product: CartItem,
-  e: React.MouseEvent<HTMLButtonElement>,
+  e?: React.MouseEvent<HTMLButtonElement>,
 ) => {
-  e.preventDefault();
-  e.stopPropagation();
+  // Only prevent default if e is provided
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   const existingProduct = cart.find((item) => item.id === product.id);
   if (existingProduct) {
     cart = cart.map((item) =>

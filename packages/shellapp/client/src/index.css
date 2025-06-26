@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
-
 /* Reset styles */
 html,
 body,
@@ -123,7 +122,8 @@ section {
 
 body {
   margin: 0;
-  font-family: 'Noto Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    'Noto Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   line-height: 1.5;
@@ -132,7 +132,7 @@ body {
 .title,
 h1 {
   font-size: 3vw; /* Make h1 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -144,7 +144,7 @@ h1 {
 
 h2 {
   font-size: 2vw; /* Make h2 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -154,7 +154,7 @@ h2 {
 
 h3 {
   font-size: 1.5vw; /* Make h3 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff0080, turquoise);
   font-family: 'Tilt Neon', sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -164,8 +164,8 @@ h3 {
 
 /* Footer */
 .footer {
-  background-color: #001736; /* Dark grayish blue */
-  color: white;
+  background-color: #f4f6fa;
+  color: #000d1d;
   text-align: center;
   padding: 16px;
   height: 200px;
@@ -176,7 +176,7 @@ h3 {
 /* Links */
 a {
   font-family: 'Tilt Neon', sans-serif;
-  color: fuchsia;
+  color: #ff0080;
   text-decoration: none;
 }
 
@@ -202,7 +202,7 @@ a:hover {
 
 /* Hover effect */
 .header a.icon-link:hover {
-  color: fuchsia; /* Change to fuchsia on hover */
+  color: #ff1493; /* Change to #ff1493 on hover */
 }
 
 fragment-outlet {
@@ -212,7 +212,7 @@ fragment-outlet {
 
 /* add borders */
 body.fragment-border fragment-outlet {
-  outline-color: rgb(133, 169, 201);
+  outline-color: #b3cade;
   border-radius: 5px;
 }
 
@@ -339,28 +339,31 @@ a {
 }
 
 .btn-toggle-cart {
-    margin-top: -227px;
-    left: 90px;
-    background-color: transparent;
-    border: 0;
-    color: #ffffff;
-    border-radius: 50%;
-    padding: 10px;
-    transition: color .3s ease;
-    position: fixed;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 20;
+  margin-top: -227px;
+  left: 90px;
+  background-color: transparent;
+  border: 0;
+  background: linear-gradient(to right, #2c003e, #4d005a); /* Gradient color for the icons */
+  -webkit-background-clip: text; /* Ensures the gradient is applied to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+  border-radius: 50%;
+  padding: 10px;
+  transition: color 0.3s ease;
+  position: fixed;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 5;
 }
 
 .btn-toggle-cart.close {
-  margin-top: 0;
+  margin-top: 12px;
+  right: -240px;
   border-radius: 0;
   padding: 0;
 }
 
 .btn-toggle-cart:hover {
-  color: fuchsia;
+  color: #ff1493;
   transform: scale(1.1);
   transition: all 0.3s linear;
 }
@@ -412,7 +415,7 @@ a {
 
 /* Menu items */
 .listItem {
-  border: 2px solid fuchsia; /* Border color */
+  border: 2px solid #ff1493; /* Border color */
   border-radius: 50px; /* Rounded corners for the bubble look */
   padding: 10px 20px; /* Padding inside each bubble */
   font-size: 1rem;
@@ -425,7 +428,7 @@ a {
 /* Links inside the bubbles */
 .listItem a {
   text-decoration: none;
-  color: fuchsia;
+  color: #ff1493;
   display: inline-block;
   transition: color 0.3s ease;
   display: flex;
@@ -438,7 +441,7 @@ a {
 }
 
 .listItem:hover {
-  background-color: fuchsia; /* Fill the bubble on hover */
+  background-color: #ff1493; /* Fill the bubble on hover */
   transform: scale(1.1); /* Slightly enlarge the bubble on hover */
   border-radius: 50px;
 }
@@ -476,7 +479,7 @@ web-fragment {
 
 /* add borders */
 body.fragment-border web-fragment {
-  outline-color: rgb(65, 155, 234);
+  outline-color: rgb(183, 183, 183);
 }
 
 .toggle-pill {
@@ -493,7 +496,7 @@ body.fragment-border web-fragment {
 }
 
 .toggle-pill.active {
-  background: #419bea;
+  background: #ff0080;
 }
 
 .toggle-knob {
@@ -512,7 +515,8 @@ body.fragment-border web-fragment {
 
 .tiny-text {
   font-size: small;
-  color: rgb(255, 255, 255);
+  color: #000d1d;
+  font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
   padding-right: 4px;
 }

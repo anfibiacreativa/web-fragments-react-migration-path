@@ -8,7 +8,7 @@ export const products: Product[] = [
     price: 29.99,
     color: 'Red',
     size: 'M',
-    imageUrl: '/_fragment/nuxt/assets/images/product1.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product7.webp',
     rating: 4.5
   },
   {
@@ -18,7 +18,7 @@ export const products: Product[] = [
     price: 24.99,
     color: 'Blue',
     size: 'L',
-    imageUrl: '/_fragment/nuxt/assets/images/product2.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product5.webp',
     rating: 4.8
   },
   {
@@ -28,7 +28,7 @@ export const products: Product[] = [
     price: 49.99,
     color: 'Black',
     size: 'XL',
-    imageUrl: '/_fragment/nuxt/assets/images/product3.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product9.webp',
     rating: 4.6
   },
   {
@@ -38,7 +38,7 @@ export const products: Product[] = [
     price: 19.99,
     color: 'Green',
     size: 'One size',
-    imageUrl: '/_fragment/nuxt/assets/images/product4.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product1.webp',
     rating: 4.7
   },
   {
@@ -48,7 +48,7 @@ export const products: Product[] = [
     price: 39.99,
     color: 'Grey',
     size: 'One size',
-    imageUrl: '/_fragment/nuxt/assets/images/product5.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product2.webp',
     rating: 4.3
   },
   {
@@ -68,7 +68,7 @@ export const products: Product[] = [
     price: 14.99,
     color: 'White',
     size: '300ml',
-    imageUrl: '/_fragment/nuxt/assets/images/product7.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product4.webp',
     rating: 4.9
   },
   {
@@ -88,7 +88,7 @@ export const products: Product[] = [
     price: 44.99,
     color: 'Grey',
     size: 'L',
-    imageUrl: '/_fragment/nuxt/assets/images/product9.webp',
+    imageUrl: '/_fragment/nuxt/assets/images/product3.webp',
     rating: 4.8
   },
   {

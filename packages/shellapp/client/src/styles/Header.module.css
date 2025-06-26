@@ -1,6 +1,8 @@
 .header {
   width: 100%;
-  background-color: #000d1d;
+  background-color: #f4f6fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000d1d;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -25,7 +27,9 @@
 
 .iconLink {
   margin-right: 16px; /* Space between the icons */
-  color: white; /* Default color for the icons */
+  background: linear-gradient(to right, #2c003e, #4d005a); /* Gradient color for the icons */
+  -webkit-background-clip: text; /* Ensures the gradient is applied to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
   font-size: 24px; /* Icon size */
   transition: color 0.3s ease; /* Smooth transition for color change */
   text-decoration: none; /* Remove underline from links */
@@ -33,7 +37,7 @@
 
 /* Hover effect */
 .iconLink:hover {
-  color: fuchsia;
+  background: linear-gradient(to right, #2c003e, #640176);
   transform: scale(1.1);
-  transition: all 0.3s linear;/* Change to fuchsia on hover */
+  transition: all 0.3s linear; /* Change to #ff1493 on hover */
 }

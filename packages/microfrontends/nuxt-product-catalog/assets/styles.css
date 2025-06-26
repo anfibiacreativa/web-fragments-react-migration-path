@@ -23,7 +23,7 @@ body {
 h1 {
   font-family: 'Tilt Neon', sans-serif;
   font-size: 3vw; /* Make h1 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -34,7 +34,8 @@ h1 {
 
 h2 {
   font-size: 2vw; /* Make h2 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  font-family: 'Tilt Neon', sans-serif;
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -43,7 +44,8 @@ h2 {
 
 h3 {
   font-size: 1.5vw; /* Make h3 font size responsive */
-  background: linear-gradient(90deg, fuchsia, turquoise);
+  font-family: 'Tilt Neon', sans-serif;
+  background: linear-gradient(90deg, #ff1493, turquoise);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -99,6 +101,7 @@ a {
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
   font-weight: 600;
+  font-family: 'Tilt Neon', sans-serif;
 }
 
 .product-card p {
@@ -122,6 +125,7 @@ a {
 .product-card .price {
   font-size: 1.25rem;
   font-weight: 700;
+  font-family: 'Tilt Neon', sans-serif;
 }
 
 .button {
@@ -131,12 +135,24 @@ a {
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.2s;
-  background-color: #2c3e50;
+  background: linear-gradient(to right, #2c003e, #4d005a);
   color: white;
 }
 
+.btn-primary {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background: linear-gradient(to right, #2c003e, #4d005a);
+  color: white;
+  padding: 0.6rem;
+}
+.btn-primary:hover {
+  background: linear-gradient(to right, #2c003e, #7f0195);
+}
+
 .button:hover {
-  background-color: #1c98f1;
+  background: linear-gradient(to right, #2c003e, #6c017f);
   transition: all 0.3s linear;
 }
 

@@ -15,9 +15,53 @@
     </div>
 
     <div v-if="slogan" class="slogan-box">
-      <p class="slogan-text">“{{ slogan }}”</p>
+      <p class="slogan-text">"{{ slogan }}"</p>
+      
+      <div class="options-container">
+        <div class="option-group">
+          <h3>Size</h3>
+          <div class="custom-radio-group">
+            <label class="custom-radio">
+              <input type="radio" v-model="selectedSize" value="S" />
+              <span class="radio-label">S</span>
+            </label>
+            <label class="custom-radio">
+              <input type="radio" v-model="selectedSize" value="M" />
+              <span class="radio-label">M</span>
+            </label>
+            <label class="custom-radio">
+              <input type="radio" v-model="selectedSize" value="L" />
+              <span class="radio-label">L</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="option-group">
+          <h3>Color</h3>
+          <div class="custom-radio-group">
+            <label class="custom-radio color-radio">
+              <input type="radio" v-model="selectedColor" value="black" />
+              <span class="color-swatch black"></span>
+              <span class="radio-label">Black</span>
+            </label>
+            <label class="custom-radio color-radio">
+              <input type="radio" v-model="selectedColor" value="white" />
+              <span class="color-swatch white"></span>
+              <span class="radio-label">White</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      
       <div class="slogan-actions">
-        <button @click="addToCart" class="button success">Add to Cart</button>
+        <button 
+          @click="addToCart" 
+          class="button success" 
+          :disabled="addedToCart"
+          :class="{ 'disabled': addedToCart }"
+        >
+          {{ addedToCart ? 'Added to Cart' : 'Add to Cart' }}
+        </button>
         <button @click="generate" class="button secondary">Regenerate</button>
       </div>
     </div>
@@ -31,9 +75,15 @@ import { CartService } from '@/shared/cartService';
 
 const keyword = ref('');
 const slogan = ref('');
+const selectedSize = ref('M');
+const selectedColor = ref('black');
+const addedToCart = ref(false);
 
 const generate = async () => {
   if (!keyword.value) return;
+  
+  // Reset the addedToCart status when generating a new slogan
+  addedToCart.value = false;
 
   const { data, error } = await useFetch<{ slogan: string }>('/generate', {
     baseURL: 'http://localhost:3001',
@@ -55,13 +105,14 @@ const addToCart = () => {
     name: `Custom Slogan: ${keyword.value}`,
     description: slogan.value,
     price: 29.99,
-    color: '',
-    size: '',
-    imageUrl: '/slogan-image.jpg',
+    color: selectedColor.value,
+    size: selectedSize.value,
+    imageUrl: '/_fragment/nuxt/assets/images/product14.webp',
     rating: 5
   };
 
   CartService.addToCart(product);
+  addedToCart.value = true;
 };
 </script>
 
@@ -93,6 +144,12 @@ h2 {
   font-size: 24px;
   margin-bottom: 6px;
   color: #ffb3ec;
+}
+
+h3 {
+  font-size: 18px;
+  color: #ffb3ec;
+  margin-bottom: 10px;
 }
 
 .subtext {
@@ -137,7 +194,7 @@ h2 {
   background-color: #00cc88;
 }
 
-.button.success:hover {
+.button.success:hover:not(.disabled) {
   background-color: #00a66b;
 }
 
@@ -147,6 +204,11 @@ h2 {
 
 .button.secondary:hover {
   background-color: #666;
+}
+
+.button.disabled {
+  background-color: #88d8b9;
+  cursor: not-allowed;
 }
 
 .slogan-box {
@@ -159,12 +221,85 @@ h2 {
 .slogan-text {
   font-size: 18px;
   font-style: italic;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
 .slogan-actions {
   display: flex;
   gap: 12px;
+  margin-top: 20px;
+}
+
+/* Custom radio button styles */
+.options-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.option-group {
+  flex: 1;
+}
+
+.custom-radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  text-align: center;
+  min-width: 40px;
+}
+
+.custom-radio input:checked + .radio-label {
+  background-color: #ff1493;
+  color: white;
+}
+
+/* Color radio buttons */
+.color-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-swatch {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  border: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.color-swatch.black {
+  background-color: #000;
+}
+
+.color-swatch.white {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.color-radio input:checked + .color-swatch {
+  border-color: #ff1493;
 }
 </style>
