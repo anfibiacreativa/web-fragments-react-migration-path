@@ -10,7 +10,7 @@
       }
     },
     "forwardPorts": [8080],
-    "postCreateCommand": "pnpm install && pnpm run build",
+    "postCreateCommand": "pnpm install && pnpm run build:all && pnpm run start:prod",
     "mounts": [
       "source=pnpm-store,target=/pnpm-store,type=volume"
     ],
