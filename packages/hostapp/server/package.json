@@ -1,0 +1,32 @@
+{
+  "name": "shell-prod-server",
+  "version": "1.0.0",
+  "description": "Prod server for the angular app bootstrapping the fragments",
+  "main": "dist/react-app.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start:server:react": "node dist/app-react.js",
+    "dev:react": "ts-node-dev --respawn --esm src/app-react.ts",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test:e2e": "npx playwright test"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.0.1",
+    "web-fragments": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "catalog:"
+  },
+  "keywords": [
+    "prod-server",
+    "web-fragments-shell"
+  ],
+  "license": "MIT"
+}
