@@ -1,7 +1,7 @@
 <!-- prettier-ignore -->
 <div align="center">
 
-<img src="./packages/client/src/assets/favicon.svg" alt="web-fragments-logo" align="center" height="64" />
+<img src="./packages/host-app/client/src/assets/favicon.svg" alt="web-fragments-logo" align="center" height="64" />
 
 # Migration path from React SPA app, to micro-frontends featuring Qwik and Nuxt.js
 
@@ -23,7 +23,7 @@
 
 ## Overview
 
-This sample demonstrates how to migrate a monolithic React.js client-side SPA e-commerce application to a micro-frontend architecture using [Web Fragments](https://github.com/web-fragments/web-fragments).
+This sample demonstrates a migrated monolithic React.js client-side SPA e-commerce application to a micro-frontend architecture using [Web Fragments](https://github.com/web-fragments/web-fragments).
 
 Web Fragments are a radically new approach to Web micro-frontends which is framework, tooling, and platform agnostic.
 
@@ -35,30 +35,32 @@ New to micro-frontends? Check out https://microfrontend.dev
 
 Clone or fork this repo, and then run
 
-`pnpm i && pnpm build && pnpm start`
+`pnpm i && pnpm build:all && pnpm start:prod`
 
 at root level.
 
-This will build the client-side shell and the server, and will start the server on port `8080`.
+This will build the client-side shell and the server, and will start the host-app server on port `8080`.
 
 ### Local devcontainer with Docker
 
 Make sure [Docker] is installed in your system. Go to the root of the project and run
 
 `docker build -t web-fragments-shell-app . `
+`docker run -p 8080:8080 -p 3000:3000 -p 3001:3001 -p 4174:4174 -p 4175:4175 -p 4176:4176 web-fragments-shell-app`
 
 You can then run
 
-`pnpm i && pnpm build && pnpm start`
+`pnpm i && pnpm build:all && pnpm start:prod`
 
 ## Application design
 
 The e-commerce application consists of a `store` route featuring a catalog and the shopping cart area.
 
-![webfragments_demo_homepage](https://github.com/user-attachments/assets/1990859c-ce48-49b5-8c99-0d53a82c6625)
+![webfragments_demo_homepage](https://github.com/user-attachments/assets/1ba3c294-b14c-432c-8bef-5c6e06704901)
+
 
 Catalog cards link directly to the product detail page.
-![webfragments_demo_detail](https://github.com/user-attachments/assets/174c2487-8043-44bc-a546-91e41b02233b)
+![webfragments_demo_detail](https://github.com/user-attachments/assets/911e0cf9-5fd4-4e51-940e-8827578c1039)
 
 ## Application structure
 
@@ -69,6 +71,10 @@ The user interface is composed by the following components
 - product detail
 - product card
 - shopping cart
+
+## Bonus feature
+
+We have added an AI Slogan Generator, as an additional micro-frontend application, that uses a small local model to generate a new t-shirt slogan!
 
 ## Migration excercise
 
