@@ -1,7 +1,7 @@
 <!-- prettier-ignore -->
 <div align="center">
 
-<img src="./packages/client/src/assets/favicon.svg" alt="web-fragments-logo" align="center" height="64" />
+<img src="./packages/host-app/client/src/assets/favicon.svg" alt="web-fragments-logo" align="center" height="64" />
 
 # Migration path from React SPA app, to micro-frontends featuring Qwik and Nuxt.js
 
