@@ -56,10 +56,11 @@ You can then run
 
 The e-commerce application consists of a `store` route featuring a catalog and the shopping cart area.
 
-![webfragments_demo_homepage](https://github.com/user-attachments/assets/1990859c-ce48-49b5-8c99-0d53a82c6625)
+![webfragments_demo_homepage](https://github.com/user-attachments/assets/1ba3c294-b14c-432c-8bef-5c6e06704901)
+
 
 Catalog cards link directly to the product detail page.
-![webfragments_demo_detail](https://github.com/user-attachments/assets/174c2487-8043-44bc-a546-91e41b02233b)
+![webfragments_demo_detail](https://github.com/user-attachments/assets/911e0cf9-5fd4-4e51-940e-8827578c1039)
 
 ## Application structure
 
