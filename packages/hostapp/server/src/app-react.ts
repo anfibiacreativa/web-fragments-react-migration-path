@@ -12,7 +12,7 @@ import {
 // Load environment variables from the root .env file
 config({ path: path.resolve(process.cwd(), '.env') });
 
-const PORT = process.env.PORT || 8080;
+const HOST_APP_PORT = process.env.HOST_APP_PORT || 8080;
 const storeFragmentEndpoint =
   process.env.STORE_FRAGMENT_ENDPOINT || 'http://localhost:4174';
 const cartFragmentEndpoint =
@@ -167,8 +167,8 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  app().listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  app().listen(HOST_APP_PORT, () => {
+    console.log(`Server is running on http://localhost:${HOST_APP_PORT}`);
   });
 }
 
