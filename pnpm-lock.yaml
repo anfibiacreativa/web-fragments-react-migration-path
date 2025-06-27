@@ -27,7 +27,7 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
 
-  packages/hostapp/client:
+  packages/host-app/client:
     dependencies:
       react:
         specifier: ^19.0.0
@@ -82,7 +82,7 @@ importers:
         specifier: ^6.1.0
         version: 6.3.5(@types/node@24.0.4)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)
 
-  packages/hostapp/server:
+  packages/host-app/server:
     dependencies:
       dotenv:
         specifier: ^16.5.0

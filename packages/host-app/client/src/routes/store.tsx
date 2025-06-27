@@ -32,6 +32,8 @@ function App() {
           <ShoppingCart />
         </div>
       </div>
+
+       {/* <web-fragment fragment-id="solid-sierpinski-triangle" src="/solid-sierpinski-triangle" /> */}
     </Layout>
   );
 }
