@@ -9,6 +9,9 @@ RUN pnpm install --frozen-lockfile
 
 COPY ./ /workspace
 
-EXPOSE 8080
+EXPOSE 8080 3000 3001 4174 4175 4176
 
-CMD ["pnpm", "start"]
+# Build all projects first
+RUN pnpm build:all
+
+CMD ["pnpm", "start:prod"]

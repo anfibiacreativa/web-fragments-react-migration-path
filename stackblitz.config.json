@@ -1,4 +1,0 @@
-{
-  "startCommand": "corepack enable && pnpm install && pnpm run build && pnpm start",
-  "ports": [8080]
-}
