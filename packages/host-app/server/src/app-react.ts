@@ -88,7 +88,7 @@ gateway.registerFragment({
 gateway.registerFragment({
   fragmentId: 'slogan',
   piercingClassNames: [],
-  routePatterns: ['/', '/_fragment/nuxt-ai/:_*'],
+  routePatterns: ['/generate', '/_fragment/nuxt-ai/:_*'],
   endpoint: sloganFragmentEndpoint,
   onSsrFetchError: () => ({
     response: new Response(
