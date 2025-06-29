@@ -38,6 +38,8 @@
 /* Hover effect */
 .iconLink:hover {
   background: linear-gradient(to right, #2c003e, #640176);
+    -webkit-background-clip: text; /* Ensures the gradient is applied to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
   transform: scale(1.1);
   transition: all 0.3s linear; /* Change to #ff1493 on hover */
 }
