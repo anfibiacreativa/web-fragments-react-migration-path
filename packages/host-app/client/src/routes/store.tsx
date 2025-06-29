@@ -21,7 +21,7 @@ function App() {
         {/*
         // @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
 
-        <web-fragment fragment-id="slogan" src="/" />
+        <web-fragment fragment-id="slogan" />
         <div className="layout">
           {/* <ProductGrid /> */}
           {/*
