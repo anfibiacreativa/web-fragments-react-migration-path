@@ -56,11 +56,24 @@ You can then run
 
 The e-commerce application consists of a `store` route featuring a catalog and the shopping cart area.
 
-![webfragments_demo_homepage](https://github.com/user-attachments/assets/1ba3c294-b14c-432c-8bef-5c6e06704901)
+![webfragments_demo_homepage](https://github.com/user-attachments/assets/fb1dfd4f-1f7c-4018-8587-d31a6ae8d354)
 
 
-Catalog cards link directly to the product detail page.
-![webfragments_demo_detail](https://github.com/user-attachments/assets/911e0cf9-5fd4-4e51-940e-8827578c1039)
+#### Catalog cards link directly to the product detail page.
+
+![webfragments_demo_detail](https://github.com/user-attachments/assets/704e3296-0cef-422f-b605-d8f3e4bb3464)
+
+Web Fragments enable the use of unclipped modal boxes!
+![webfragments modal box](https://github.com/user-attachments/assets/bc4e6303-75f0-421b-a35b-7cfb5776bba7)
+
+#### Web Fragments inter communication with Bradcast channel
+
+![add to cart using broadcast channel micro-frontends](https://github.com/user-attachments/assets/2290f452-0605-4e33-a912-b7c0c8d1c104)
+
+#### 3rd party payment integration in a fully functional micro-architecture
+
+![web fragments payment](https://github.com/user-attachments/assets/9bf3026d-322d-4c0e-b8bf-95cb2e91f4b4)
+
 
 ## Application structure
 
