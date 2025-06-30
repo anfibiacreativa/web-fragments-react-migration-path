@@ -11,8 +11,8 @@
     "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:all": "pnpm install && pnpm --recursive run build",
-    "start:dev": "concurrently -n catalog,slogan,qwik,react,server,payment -c green,red,blue,yellow,cyan,magenta \"pnpm --filter nuxt-product-catalog dev\" \"pnpm --filter nuxt-app dev\" \"pnpm --filter qwik-shopping-cart dev\" \"pnpm --filter react-shell-app dev\" \"pnpm --filter shell-prod-server dev:react\" \"pnpm --filter @demongbe/payment dev\"",
-    "start:prod": "pnpm build:all && concurrently -n catalog,slogan,qwik,server,payment -c green,red,blue,cyan,magenta \"pnpm --filter nuxt-product-catalog preview\" \"pnpm --filter nuxt-app preview\" \"pnpm --filter qwik-shopping-cart preview\" \"pnpm --filter shell-prod-server start:server:react\" \"pnpm --filter @demongbe/payment start\""
+    "start:dev": "concurrently -n catalog,slogan,qwik,react,server,payment,ai -c green,red,blue,yellow,cyan,magenta,white \"pnpm --filter nuxt-product-catalog dev\" \"pnpm --filter nuxt-app dev\" \"pnpm --filter qwik-shopping-cart dev\" \"pnpm --filter react-shell-app dev\" \"pnpm --filter shell-prod-server dev:react\" \"pnpm --filter @demongbe/payment dev\" \"pnpm --filter ai-slogan-service dev\"",
+    "start:prod": "pnpm build:all && concurrently -n catalog,slogan,qwik,server,payment,ai -c green,red,blue,cyan,magenta,white \"pnpm --filter nuxt-product-catalog preview\" \"pnpm --filter nuxt-app preview\" \"pnpm --filter qwik-shopping-cart preview\" \"pnpm --filter shell-prod-server start:server:react\" \"pnpm --filter @demongbe/payment start\" \"pnpm --filter ai-slogan-service start\""
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
