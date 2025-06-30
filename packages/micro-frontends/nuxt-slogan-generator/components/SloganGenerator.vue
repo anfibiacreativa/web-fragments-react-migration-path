@@ -85,8 +85,12 @@ const generate = async () => {
   // Reset the addedToCart status when generating a new slogan
   addedToCart.value = false;
 
+  // Use environment variable with fallback to localhost
+  const apiBaseUrl = import.meta.env.VITE_AI_SERVICE_URL || 'http://localhost:3001';
+  console.log('AI Service URL:', apiBaseUrl);
+
   const { data, error } = await useFetch<{ slogan: string }>('/generate', {
-    baseURL: 'http://localhost:3001',
+    baseURL: apiBaseUrl,
     method: 'POST',
     body: { keyword: keyword.value }
   });
