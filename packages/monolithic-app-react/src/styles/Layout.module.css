@@ -1,0 +1,26 @@
+.header {
+  background-color: #0070f3;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.mainWrapper {
+  position: relative;
+  top: 50px;
+  padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 100%;
+  padding-bottom: 200px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}

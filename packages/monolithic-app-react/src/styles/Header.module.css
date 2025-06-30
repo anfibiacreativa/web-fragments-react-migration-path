@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  background-color: #f4f6fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000d1d;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+}
+.headerWrapper {
+  max-width: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  top: 0;
+  width: 100%;
+}
+
+.topNav {
+  list-style-type: none;
+  display: flex;
+  margin-top: 5px;
+}
+
+.iconLink {
+  margin-right: 16px; /* Space between the icons */
+  background: linear-gradient(to right, #2c003e, #4d005a); /* Gradient color for the icons */
+  -webkit-background-clip: text; /* Ensures the gradient is applied to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+  font-size: 24px; /* Icon size */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect */
+.iconLink:hover {
+  background: linear-gradient(to right, #2c003e, #640176);
+    -webkit-background-clip: text; /* Ensures the gradient is applied to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+  transform: scale(1.1);
+  transition: all 0.3s linear; /* Change to #ff1493 on hover */
+}
