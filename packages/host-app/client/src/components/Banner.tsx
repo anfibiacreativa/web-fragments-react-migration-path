@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/CountDownBanner.module.css';
+import styles from '../styles/Banner.module.css';
 
 const CountdownBanner: React.FC = () => {
   const [now, setNow] = useState<Date | null>(null); // Start with null to ensure it doesn't render SSR time
