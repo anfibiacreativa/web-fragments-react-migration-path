@@ -27,7 +27,7 @@ const gateway = new FragmentGateway({
         z-index: 1;
 
         &.store {
-          width: calc(100% - 72px);
+          width: calc(100% - 70px);
           position: relative;
           inset: 0;
           top: 269px;
@@ -42,7 +42,7 @@ const gateway = new FragmentGateway({
 
 
           @media (min-width: 1024px) {
-            width: 527px;
+            width: 536px;
             left: -166px;
           }
         }
