@@ -1,8 +1,8 @@
 import Layout from '../components/Layout';
-import Banner from '../components/CountDownBanner';
+// Import with explicit file extension to avoid resolution conflicts
+import Banner from '../components/Banner';
 import { useCartToggle } from '../utils/cartState';
 import ShoppingCart from '../components/ShoppingCart';
-
 
 function App() {
   const { isCartOpen, toggleCart } = useCartToggle(); // Toggle the cart sidebar
@@ -20,7 +20,6 @@ function App() {
         </div>
 
         {/* Custom modal for slogan generator */}
-        
 
         <div className="layout">
           {/* <ProductGrid /> */}

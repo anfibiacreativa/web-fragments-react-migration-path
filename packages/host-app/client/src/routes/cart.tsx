@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import Banner from '../components/CountDownBanner';
+import Banner from '../components/Banner';
 // import ShoppingCart from '../components/ShoppingCart';
 import { useCartToggle } from '../utils/cartState';
 

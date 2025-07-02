@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import Banner from '../components/CountDownBanner';
+// Import with explicit file extension to avoid resolution conflicts
+import Banner from '../components/Banner';
 import { useCartToggle } from '../utils/cartState';
 import '../index.css';
 
