@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/Banner.module.css';
 
-const CountdownBanner: React.FC = () => {
+const Banner: React.FC = () => {
   const [now, setNow] = useState<Date | null>(null); // Start with null to ensure it doesn't render SSR time
   const [saleStartTime, setSaleStartTime] = useState<Date | null>(null);
 
@@ -47,4 +47,4 @@ const CountdownBanner: React.FC = () => {
   );
 };
 
-export default CountdownBanner;
+export default Banner;

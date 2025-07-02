@@ -1,7 +1,9 @@
 import { sharedPost } from './post'; // Import your sharedPost function
 
-// Define the API endpoint
-const PAYMENT_API_URL = 'http://localhost:3000/create-payment'; // Replace with your actual backend endpoint
+// Dynamically determine the API URL based on the environment
+const PAYMENT_API_URL =
+  import.meta.env.VITE_PAYMENT_API_URL ||
+  'http://localhost:3000/create-payment';
 
 // Define the request structure for the payment API
 export interface PaymentRequest {
