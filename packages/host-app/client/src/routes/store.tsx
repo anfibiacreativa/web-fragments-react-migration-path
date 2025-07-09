@@ -19,12 +19,9 @@ function App() {
           </button>
         </div>
 
-        {/* Custom modal for slogan generator */}
-
         <div className="layout">
           {/* <ProductGrid /> */}
-          {/*
-// @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
+          {/* @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
           <web-fragment fragment-id="store" />
           {/* <ShoppingCart /> */}
 
