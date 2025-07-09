@@ -5,8 +5,6 @@ import {
 // import { processPayment, PaymentRequest } from '../utils/paymentService';
 import stylesCart from '../styles/ShoppingCart.module.css';
 import { useCartToggle } from '../utils/cartState';
-import SloganModal from './SloganModal';
-import stylesSlogan from '../styles/SloganModal.module.css';
 
 const ShoppingCart: React.FC = () => {
   const cart = useCart();
@@ -18,22 +16,7 @@ const ShoppingCart: React.FC = () => {
 
 
   // Generate Your Own Shirt Button Component
-const GenerateShirtButton: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
-  return (
-    <>
-      <button className={stylesSlogan.generateButton} onClick={openModal}>
-        Generate your own shirt!
-      </button>
-
-      <SloganModal isOpen={isModalOpen} onClose={closeModal} />
-    </>
-  );
-};
 
   // const handleProceedToPayment = async () => {
   //   if (cart.length === 0) {
@@ -94,7 +77,11 @@ const GenerateShirtButton: React.FC = () => {
         <i className="fa-solid fa-circle-xmark"></i>
       </button>
       <div className={stylesCart.cart}>
-        <GenerateShirtButton />
+        {/* @ts-expect-error - web-fragment is a custom element */}
+        <web-fragment 
+          fragment-id="slogan" 
+          src="/button" 
+        />
         <h3>Your Shopping Cart</h3>
 
         {/* {message && <p className={styles.statusMessage}>{message}</p>}
@@ -109,13 +96,7 @@ const GenerateShirtButton: React.FC = () => {
         )} */}
         {/* @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
         <web-fragment fragment-id="cart" src="/cart" />
-        {cart.length === 0 && (
-          <p className={stylesCart.message}>
-
-            <i className="fa-solid fa-box-open fa-10x fa-bounce"></i>
-          </p>
-        )}
-
+    
         {!isProcessingPayment && cart.length > 0 && (
           <>
             {/* <ul className={styles.cartItems}>
