@@ -25,20 +25,37 @@ app.post('/generate', async (req, res) => {
       console.log('✅ Xenova/gpt2 model loaded');
     }
 
-    const prompt = `As a clever developer, come up with a short, funny tech slogan about "${keyword}". 
+    let slogan = '';
+
+    switch (keyword.toLocaleLowerCase()) {
+      case 'docker':
+        slogan = 'Box it!';
+        break;
+      case 'javascript':
+        slogan = 'This is undefined?';
+        break;
+      case 'css':
+        slogan = 'Center it!';
+        break;
+      default:
+        const prompt = `As a clever developer, come up with a short, funny tech slogan about "${keyword}". 
     Make it sound like it belongs on a t-shirt.`;
 
+        const output = await generator(prompt, {
+          max_new_tokens: 30,
+          temperature: 0.95,
+          top_k: 50,
+          top_p: 0.95,
+          do_sample: true,
+        });
 
-    const output = await generator(prompt, {
-      max_new_tokens: 30,
-      temperature: 0.95,
-      top_k: 50,
-      top_p: 0.95,
-      do_sample: true,
-    });
-
-    const fullText = output[0].generated_text;
-    const slogan = fullText.replace(prompt, '').trim().split(/[\n\.]/)[0];
+        const fullText = output[0].generated_text;
+        slogan = fullText
+          .replace(prompt, '')
+          .trim()
+          .split(/[\n\.]/)[0];
+        break;
+    }
 
     res.json({ slogan });
   } catch (error) {
