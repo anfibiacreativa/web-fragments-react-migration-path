@@ -1,5 +1,5 @@
 <script setup>
 import { navigateTo } from '#app'
 
-navigateTo('/generate', { replace: true });
+navigateTo('/button', { replace: true });
 </script>

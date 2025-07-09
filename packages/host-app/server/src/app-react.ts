@@ -98,11 +98,11 @@ gateway.registerFragment({
 gateway.registerFragment({
   fragmentId: 'slogan',
   piercingClassNames: [],
-  routePatterns: ['/generate', '/_fragment/nuxt-ai/:_*'],
+  routePatterns: ['/button', '/_fragment/nuxt-ai/:_*'],
   endpoint: sloganFragmentEndpoint,
   onSsrFetchError: () => ({
     response: new Response(
-      `<p id="cart-fragment-not-found">
+      `<p id="slogan-fragment-not-found">
          <style>#slogan-fragment-not-found { color: red; font-size: 2rem; }</style>
          Slogan fragment could not be loaded
        </p>`,
