@@ -77,11 +77,13 @@ const ShoppingCart: React.FC = () => {
         <i className="fa-solid fa-circle-xmark"></i>
       </button>
       <div className={stylesCart.cart}>
-        {/* @ts-expect-error - web-fragment is a custom element */}
+        {/* @ts-ignore - web-fragment is a custom element */}
+        
         <web-fragment 
           fragment-id="slogan" 
           src="/button" 
         />
+        
         <h3>Your Shopping Cart</h3>
 
         {/* {message && <p className={styles.statusMessage}>{message}</p>}

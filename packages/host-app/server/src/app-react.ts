@@ -84,15 +84,16 @@ gateway.registerFragment({
   }),
 });
 
-// register fragment: qwik cart
-// gateway.registerFragment({
-// 	fragmentId: 'solid-sierpinski-triangle',
-// 	endpoint: 'https://solid-sierpinski-triangle.fragments.demos.web-fragments.dev',
-// 	routePatterns: [
-// 		'/solid-sierpinski-triangle',
-// 		'/__wf/dev.web-fragments.demos.fragments.solid-skerpinski-triangle/:_*',
-// 	],
-// });
+// register fragment: solid-sierpinski-triangle
+gateway.registerFragment({
+  fragmentId: 'solid-sierpinski-triangle',
+  endpoint:
+    'https://solid-sierpinski-triangle.fragments.demos.web-fragments.dev',
+  routePatterns: [
+    '/solid-sierpinski-triangle',
+    '/__wf/dev.web-fragments.demos.fragments.solid-skerpinski-triangle/:_*',
+  ],
+});
 
 // register fragment: nuxt slogan
 gateway.registerFragment({

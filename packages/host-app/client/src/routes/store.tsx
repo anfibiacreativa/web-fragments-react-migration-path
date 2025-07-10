@@ -21,15 +21,16 @@ function App() {
 
         <div className="layout">
           {/* <ProductGrid /> */}
-          {/* @ts-expect-error: Fragment outlet is not recognized by TypeScript */}
+          {/* @ts-expect-error: web-fragment is a custom element */}
           <web-fragment fragment-id="store" />
           {/* <ShoppingCart /> */}
 
           <ShoppingCart />
         </div>
       </div>
+      {/* @ts-ignore: web-fragment is a custom element */}
 
-      {/* <web-fragment fragment-id="solid-sierpinski-triangle" src="/solid-sierpinski-triangle" /> */}
+      <web-fragment fragment-id="solid-sierpinski-triangle" src="/solid-sierpinski-triangle" />
     </Layout>
   );
 }
