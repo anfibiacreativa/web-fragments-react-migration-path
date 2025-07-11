@@ -30,7 +30,10 @@ function App() {
       </div>
       {/* @ts-ignore: web-fragment is a custom element */}
 
-      <web-fragment fragment-id="solid-sierpinski-triangle" src="/solid-sierpinski-triangle" />
+      <web-fragment
+        fragment-id="solid-sierpinski-triangle"
+        src="/solid-sierpinski-triangle"
+      />
     </Layout>
   );
 }

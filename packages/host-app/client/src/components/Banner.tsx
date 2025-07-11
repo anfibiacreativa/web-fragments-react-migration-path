@@ -39,7 +39,7 @@ const Banner: React.FC = () => {
 
   return (
     <div className={styles.banner}>
-      <div className={styles.caption}>
+      <div className={styles.bannerCaption}>
         <h1 className={styles.bannerTitle}>Mega Swag Sale!</h1>
         <p>Time left: {getCountdown()}</p>
       </div>
