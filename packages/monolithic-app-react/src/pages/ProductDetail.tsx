@@ -5,10 +5,13 @@ import { Product } from '../types.d';
 import { addToCart } from '../utils/cartState';
 import Layout from '../components/Layout';
 import styles from '../styles/ProductDetail.module.css';
+import Banner from '../components/CountDownBanner';
 import ShoppingCart from '../components/ShoppingCart';
+import { useCartToggle } from '../utils/cartState';
 
 const ProductDetail: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
+  const { isCartOpen, toggleCart } = useCartToggle(); // Toggle the cart sidebar
 
   useEffect(() => {
     // Retrieve the product data from localStorage
@@ -36,11 +39,14 @@ const ProductDetail: React.FC = () => {
 
       <Layout>
         <div className="container">
-          <div className="backdrop"></div>
+          <div className={isCartOpen ? 'backdrop visible' : 'backdrop'}></div>
 
           {/* Using Link instead of <a> for better routing */}
           <Link to="/" className={styles.breadcrumb}>← Back to Catalog</Link>
-
+          <Banner />
+          <button className='btn-toggle-cart' onClick={toggleCart}>
+            <i className='fa-solid fa-cart-shopping'></i>
+          </button>
           <div className="layout">
             <div className={styles.productDetail}>
               <div className={styles.productImageContainer}>

@@ -329,7 +329,7 @@ a {
 }
 
 .btn-toggle-cart {
-  margin-top: -227px;
+  top: 7px;
   left: 95px;
   background-color: transparent;
   border: 0;
