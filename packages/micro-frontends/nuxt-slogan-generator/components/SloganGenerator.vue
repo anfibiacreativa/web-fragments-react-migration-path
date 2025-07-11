@@ -306,4 +306,30 @@ h3 {
 .color-radio input:checked + .color-swatch {
   border-color: #ff1493;
 }
+
+@media screen and (max-width: 756px) {
+  .slogan-generator {
+    padding: 16px;
+    margin: 16px auto;
+  }
+
+  .input-group,
+  .slogan-actions {
+    flex-direction: column;
+  }
+
+  .input {
+    margin-bottom: 8px;
+  }
+
+  .options-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .option-group {
+    width: 100%;
+  }
+  
+}
 </style>
