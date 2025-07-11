@@ -382,6 +382,8 @@ a {
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   transform: translateX(100%); /* Hidden state */
+  padding: 1rem;
+  margin-top: 35px;
 }
 .cartSidebar.open {
   transform: translateX(0);

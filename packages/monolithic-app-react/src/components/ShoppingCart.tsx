@@ -69,7 +69,6 @@ const ShoppingCart: React.FC = () => {
         <i className="fa-solid fa-circle-xmark"></i>
       </button>
       <div className={styles.cart}>
-        <h3>Your Shopping Cart</h3>
 
         {message && <p className={styles.successMessage}>{message}</p>}
 
